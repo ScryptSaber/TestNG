@@ -89,7 +89,7 @@ public class RegistrationTests extends BaseTest {
         //Dismiss pop-ups by navigating back and forward page
         BrowserUtils.navigateBackAndForwardToDismissAds();
 
-        //Verify that 'Logged in as username' is visible
+        //Verify that 'Logged in as username' is visible.
         softAssert.assertTrue(pages.getHomePage().getLoggedInAsGivenNameResult().contains("Logged in as"), "Error !! No contains Logged result");
 
         //Click 'Delete Account' button
@@ -98,7 +98,7 @@ public class RegistrationTests extends BaseTest {
         //Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
         String actualAccountDeletedMessage = pages.getDeleteAccountPage().getAccountDeletedMessage();
         softAssert.assertEquals(actualAccountDeletedMessage, "ACCOUNT DELETED!", "ERROR : Test Case 1 - Verify that 'ACCOUNT DELETED!' is visible\n");
-        
+
     }
 
     @AfterSuite
