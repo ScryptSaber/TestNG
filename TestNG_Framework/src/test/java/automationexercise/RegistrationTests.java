@@ -42,7 +42,7 @@ public class RegistrationTests extends BaseTest {
 
         //Enter name and email address
         pages.getLoginPage().setSignupNewUserName("Erdem");
-        pages.getLoginPage().setSignupEmailAddressBox("erd@kms.com");
+        pages.getLoginPage().setSignupEmailAddressBox("erd1@kms.com");
 
         // Click 'Signup' button
         pages.getLoginPage().clickSignupButton();
@@ -77,12 +77,17 @@ public class RegistrationTests extends BaseTest {
         //Click 'Create Account button'
         pages.getSignupPage().clickCreateAccount();
 
+
         //Verify that 'ACCOUNT CREATED!' is visible
         String actualAccountCreatedMessage = pages.getAccountCreatedPage().getAccountCreatedMessage();
         softAssert.assertEquals(actualAccountCreatedMessage, "ACCOUNT CREATED!", "ERROR : Test Case 1 - Verify that 'ACCOUNT CREATED!' is visible\n");
 
+
         //Click 'Continue' button
         pages.getAccountCreatedPage().clickContinueButton();
+
+        //Dismiss pop-ups by navigating back and forward page
+        BrowserUtils.navigateBackAndForwardToDismissAds();
 
         //Verify that 'Logged in as username' is visible
         softAssert.assertTrue(pages.getHomePage().getLoggedInAsGivenNameResult().contains("Logged in as"), "Error !! No contains Logged result");
