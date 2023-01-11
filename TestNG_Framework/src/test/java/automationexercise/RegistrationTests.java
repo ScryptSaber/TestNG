@@ -98,8 +98,7 @@ public class RegistrationTests extends BaseTest {
         //Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
         String actualAccountDeletedMessage = pages.getDeleteAccountPage().getAccountDeletedMessage();
         softAssert.assertEquals(actualAccountDeletedMessage, "ACCOUNT DELETED!", "ERROR : Test Case 1 - Verify that 'ACCOUNT DELETED!' is visible\n");
-
-
+        
     }
 
     @AfterSuite
