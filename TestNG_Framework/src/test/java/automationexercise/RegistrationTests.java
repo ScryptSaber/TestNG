@@ -12,7 +12,7 @@ import utilities.Driver;
 
 public class RegistrationTests extends BaseTest {
 
-    // We should use soft assertion because in this test case we have multiple cases to test
+    // We should use soft assertion because in this testcase we have multiple cases to test
     SoftAssert softAssert = new SoftAssert();
 
     @BeforeSuite
@@ -31,7 +31,7 @@ public class RegistrationTests extends BaseTest {
     @Test(priority = 0)
     public void TestCase_1_Register_User() {
 
-        //Launch browser and Navigate to url 'http://automationexercise.com'
+        //Launch browser and navigate to Url 'http://automationexercise.com'
         //Click on 'Signup/Login' button
 
         pages.getHomePage().clickSignUpLoginButton();
@@ -98,6 +98,7 @@ public class RegistrationTests extends BaseTest {
         //Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
         String actualAccountDeletedMessage = pages.getDeleteAccountPage().getAccountDeletedMessage();
         softAssert.assertEquals(actualAccountDeletedMessage, "ACCOUNT DELETED!", "ERROR : Test Case 1 - Verify that 'ACCOUNT DELETED!' is visible\n");
+
 
     }
 
