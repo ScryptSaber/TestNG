@@ -62,8 +62,7 @@ public class ContactTests extends BaseTest {
         pages.getContactUsPage().clickHomeButton();
         String homePageUrl = Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(homePageUrl, "https://automationexercise.com", "Test case 6 :Verify that landed to home page successfully");
-
-
+        
     }
 
     @AfterSuite
