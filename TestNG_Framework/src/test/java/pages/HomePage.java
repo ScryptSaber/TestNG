@@ -18,6 +18,16 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='Delete Account']")
     private WebElement deleteAccountButton;
 
+    @FindBy(xpath = "//div[@class='item active']//span[1]")
+    private WebElement automationTextWebElement;
+
+    @FindBy(xpath = "//a[normalize-space()='Logout']")
+    private WebElement logoutButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Contact us']")
+    private WebElement contactUsButton;
+
+
     public void clickSignUpLoginButton() {
         signUpLoginButton.click();
     }
@@ -31,8 +41,19 @@ public class HomePage extends BasePage {
         return loggedInAsGivenName.getText();
     }
 
-    public void clickDeleteAccountButton(){
+    public void clickDeleteAccountButton() {
         deleteAccountButton.click();
+    }
+
+    public String getAutomationText() {
+        return automationTextWebElement.getText();
+    }
+
+    public void clickLogoutButton() {
+        logoutButton.click();
+    }
+    public void clickContactUsButton(){
+        contactUsButton.click();
     }
 
 }

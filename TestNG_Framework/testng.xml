@@ -6,6 +6,7 @@
             <class name="automationexercise.RegistrationTests">
                 <methods>
                     <include name="TestCase_1_Register_User"/>
+                    <include name="TestCase_02_Login_User_With_Correct_Email_And_Password"/>
                 </methods>
             </class>
         </classes>

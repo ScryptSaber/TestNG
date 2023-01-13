@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage  extends BasePage{
+public class LoginPage extends BasePage {
 
     @FindBy(xpath = "//*[@data-qa='signup-name']")
     private WebElement signupNewUserNameBox;
@@ -26,6 +26,15 @@ public class LoginPage  extends BasePage{
     @FindBy(xpath = "//*[@id='form']/div/div/div[3]/div")
     private WebElement newUserSignupMessageWebElement;
 
+    @FindBy(xpath = "//h2[normalize-space()='Login to your account']")
+    private WebElement loginToYourAccountMessageWebElement;
+
+    @FindBy(xpath = "//p[normalize-space()='Your email or password is incorrect!']")
+    private WebElement incorrectLoginMessageWebElement;
+
+    @FindBy(xpath = "//p[normalize-space()='Email Address already exist!']")
+    private WebElement alreadyExistEmailMessageWebElement;
+
     public void setSignupEmailAddressBox(String emailAddress) {
         signupEmailAddressBox.sendKeys(emailAddress);
     }
@@ -33,6 +42,7 @@ public class LoginPage  extends BasePage{
     public void clickSignupButton() {
         signUpButton.click();
     }
+
     public void setLoginEmailAddress(String emailAddress) {
         loginEmailAddressBox.sendKeys(emailAddress);
     }
@@ -53,6 +63,18 @@ public class LoginPage  extends BasePage{
 
     public void setSignupNewUserName(String newUserName) {
         signupNewUserNameBox.sendKeys(newUserName);
+    }
+
+    public String getLoginToYourAccountMessage() {
+        return loginToYourAccountMessageWebElement.getText();
+    }
+
+    public String getIncorrectLoginMessage() {
+        return incorrectLoginMessageWebElement.getText();
+    }
+
+    public String getAlreadyExistEmailMessage(){
+       return alreadyExistEmailMessageWebElement.getText();
     }
 
 }
