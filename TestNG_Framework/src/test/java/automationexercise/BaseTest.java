@@ -1,5 +1,6 @@
 package automationexercise;
 
+import org.testng.annotations.AfterSuite;
 import utilities.BrowserUtils;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -18,5 +19,11 @@ public class BaseTest {
         System.out.println("::::::Test Information ::::::\n\tURL :" + url + "\n\tBrowser :" + browser + "\n\tEnvironment :" + environment);
         BrowserUtils.wait(1);
 
+    }
+
+    @AfterSuite
+    public void afterTest() {
+        // Perform cleanup tasks or generate test reports here
+        Driver.getDriver().quit();
     }
 }

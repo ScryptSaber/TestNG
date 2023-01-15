@@ -27,33 +27,82 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='Contact us']")
     private WebElement contactUsButton;
 
+    @FindBy(xpath = "//a[contains(text(),'Test Cases')]")
+    private WebElement testCasesButton;
+
+    @FindBy(xpath = "//h2[normalize-space()='Subscription']")
+    private WebElement subscriptionTextWebElement;
+
+    @FindBy(xpath = "//input[@id='susbscribe_email']")
+    private WebElement emailSubscriptionBox;
+
+    @FindBy(id = "subscribe")
+    private WebElement subscribeSubmitButton;
+
+    @FindBy(xpath = "//div[@class='alert-success alert']")
+    private WebElement alertSuccessSubscribeMessageWebElement;
+
+    @FindBy(xpath = "//body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")
+    private WebElement cartButton;
+
+
+    public void clickProductsButton() {
+        BrowserUtils.verifyElementDisplayed(productButton);
+        productButton.click();
+    }
+
+    public void clickCartButton() {
+        cartButton.click();
+    }
 
     public void clickSignUpLoginButton() {
         signUpLoginButton.click();
     }
 
-    public void clickProductButton() {
-        BrowserUtils.verifyElementDisplayed(productButton);
-        productButton.click();
+    public void clickTestCasesButton() {
+        testCasesButton.click();
     }
 
-    public String getLoggedInAsGivenNameResult() {
-        return loggedInAsGivenName.getText();
+
+    public void clickLogoutButton() {
+        logoutButton.click();
+    }
+
+    public void clickContactUsButton() {
+        contactUsButton.click();
     }
 
     public void clickDeleteAccountButton() {
         deleteAccountButton.click();
     }
 
+
+    public void clickSubscribeSubmitButton() {
+        signUpLoginButton.click();
+    }
+
+
+    public String getLoggedInAsGivenNameResult() {
+        return loggedInAsGivenName.getText();
+    }
+
+
     public String getAutomationText() {
         return automationTextWebElement.getText();
     }
 
-    public void clickLogoutButton() {
-        logoutButton.click();
+
+    public String getSubscriptionText() {
+        return subscriptionTextWebElement.getText();
     }
-    public void clickContactUsButton(){
-        contactUsButton.click();
+
+    public void setEmailSubscriptionBox(String email) {
+        emailSubscriptionBox.sendKeys(email);
+    }
+
+
+    public String getAlertSuccessSubscribeMessage() {
+        return alertSuccessSubscribeMessageWebElement.getText();
     }
 
 }

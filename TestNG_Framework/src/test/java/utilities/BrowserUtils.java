@@ -37,6 +37,15 @@ public class BrowserUtils {
     }
 
     /**
+     * Performs hover over mouse action on an element
+     *
+     * @param element
+     */
+    public static void hoverOver(WebElement element) {
+        new Actions(Driver.getDriver()).moveToElement(element);
+    }
+
+    /**
      * Performs thread sleep for the desired seconds
      */
     public static void wait(int secs) {
@@ -108,7 +117,8 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
 
     }
-    public static void navigateBackAndForwardToDismissAds(){
+
+    public static void navigateBackAndForwardToDismissAds() {
         Driver.getDriver().navigate().back();
         Driver.getDriver().navigate().forward();
 

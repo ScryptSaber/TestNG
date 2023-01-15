@@ -13,6 +13,10 @@ public class Pages {
     private DeleteAccountPage deleteAccountPage;
     private ContactUsPage contactUsPage;
 
+    private ProductDetailPage productDetailPage;
+    private CartPage cartPage;
+
+
     public Pages() {
         this.homePage = new HomePage();
         this.loginPage = new LoginPage();
@@ -21,6 +25,9 @@ public class Pages {
         this.accountCreatedPage = new AccountCreatedPage();
         this.deleteAccountPage = new DeleteAccountPage();
         this.contactUsPage = new ContactUsPage();
+        this.productDetailPage = new ProductDetailPage();
+        this.cartPage = new CartPage();
+
     }
 
     public SignupPage getSignupPage() {
@@ -50,4 +57,14 @@ public class Pages {
     public ContactUsPage getContactUsPage() {
         return contactUsPage;
     }
+
+    public ProductDetailPage getProductDetailPage() {
+        return productDetailPage;
+    }
+
+    public CartPage getCartPage() {
+        return cartPage;
+    }
+
+
 }
