@@ -77,7 +77,7 @@ public class HomePage extends BasePage {
     }
 
 
-    public void clickSubscribeSubmitButton() {
+    public void clickSubscriptionSubmitButton() {
         signUpLoginButton.click();
     }
 

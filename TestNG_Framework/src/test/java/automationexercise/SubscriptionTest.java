@@ -1,11 +1,10 @@
 package automationexercise;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import utilities.Driver;
+import utilities.BrowserUtils;
 
 public class SubscriptionTest extends BaseTest {
     // We should use soft assertion because in this testcase we have multiple cases to test
@@ -28,8 +27,7 @@ public class SubscriptionTest extends BaseTest {
         softAssert.assertEquals(automationText, "Automation", "Test case 8  Verify that home page is visible successfully");
 
         //Scroll down to footer
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0,600)");
+        BrowserUtils.scrollDown("200");
 
         //Verify text 'SUBSCRIPTION'
         String actualSubscriptionText = pages.getHomePage().getSubscriptionText();
@@ -37,7 +35,7 @@ public class SubscriptionTest extends BaseTest {
 
         //Enter email address in input and click arrow button
         pages.getHomePage().setEmailSubscriptionBox("ed@kk");
-        pages.getHomePage().clickSubscribeSubmitButton();
+        pages.getHomePage().clickSubscriptionSubmitButton();
 
         //Verify success message 'You have been successfully subscribed!' is visible
         String actualSubscribeSuccessMessage = pages.getHomePage().getAlertSuccessSubscribeMessage();

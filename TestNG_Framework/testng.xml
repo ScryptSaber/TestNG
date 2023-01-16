@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utilities.Listeners"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/ASUS/TestNG_Framework/src">
         <classes>
             <class name="automationexercise.RegistrationTests">
                 <methods>
                     <include name="TestCase_1_Register_User"/>
-                    <include name="TestCase_02_Login_User_With_Correct_Email_And_Password"/>
                 </methods>
             </class>
         </classes>

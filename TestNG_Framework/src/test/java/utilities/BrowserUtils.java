@@ -1,9 +1,6 @@
 package utilities;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -122,5 +119,10 @@ public class BrowserUtils {
         Driver.getDriver().navigate().back();
         Driver.getDriver().navigate().forward();
 
+    }
+
+    public static void scrollDown(String scroll) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0," + scroll + ")");
     }
 }

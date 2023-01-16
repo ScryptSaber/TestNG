@@ -1,2 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/ASUS/TestNG/TestNG_Framework/src"><classes><class name="automationexercise.LoginTests"><methods><include name="TestCase_02_Login_User_With_Correct_Email_And_Password"/></methods></class><class name="automationexercise.RegistrationTests"><methods><include name="TestCase_1_Register_User"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/ASUS/TestNG/TestNG_Framework/src">
+        <classes>
+            <class name="automationexercise.CartTests">
+                <methods>
+                    <include name="TestCase_11_Verify_Subscription_In_Cart_Page"/>
+                    <include name="TestCase_12_Add_Products_In_Cart"/>
+                </methods>
+            </class>
+            <class name="automationexercise.ContactTests">
+                <methods>
+                    <include name="TestCase_06_Contact_Us_Form"/>
+                </methods>
+            </class>
+            <class name="automationexercise.LoginTests">
+                <methods>
+                    <include name="TestCase_02_Login_User_With_Correct_Email_And_Password"/>
+                    <include name="TestCase_03_Login_User_With_Incorrect_Email_And_Password"/>
+                </methods>
+            </class>
+            <class name="automationexercise.LogoutTests">
+                <methods>
+                    <include name="TestCase_04_Logout_User"/>
+                </methods>
+            </class>
+            <class name="automationexercise.ProductTests">
+                <methods>
+                    <include name="TestCase_08_Verify_All_Products_And_Product_Detail_Page"/>
+                    <include name="TestCase_09_SearchProduct"/>
+                </methods>
+            </class>
+            <class name="automationexercise.RegistrationTests">
+                <methods>
+                    <include name="TestCase_1_Register_User"/>
+                    <include name="TestCase_01_Register_User_Without_Delete_Account"/>
+                    <include name="TestCase_05_Register_User_With_Existing_Email"/>
+                </methods>
+            </class>
+            <class name="automationexercise.SubscriptionTest">
+                <methods>
+                    <include name="TestCase_10_Verify_Subscription_In_Home_Page"/>
+                </methods>
+            </class>
+            <class name="automationexercise.TestCasesPageTest">
+                <methods>
+                    <include name="TestCase_07_Verify_Test_Cases_Page"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
